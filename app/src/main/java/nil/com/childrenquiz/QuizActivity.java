@@ -10,20 +10,21 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class AnimalQuizActivity extends AppCompatActivity {
-    private QuestionList questionList = new QuestionList();
+public class QuizActivity extends AppCompatActivity {
+    private AnimalQuestionList animalQuestionList = new AnimalQuestionList();
+    private BirdQuestionList birdQuestionList = new BirdQuestionList();
     private Question question;
     private TextToSpeech textToSpeech;
     private static final String CORRECT_ANSWER = "Answer is correct";
     private static final String WRONG_ANSWER = "Answer is incorrect";
+    private String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animalquiz);
-
+        setContentView(R.layout.activity_quiz);
+        value = getIntent().getExtras().getString("value");
         loadInitialQuiz();
-
         textToSpeech = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -34,13 +35,26 @@ public class AnimalQuizActivity extends AppCompatActivity {
         });
     }
 
+    public Question getRandomQuestion() {
+        Question question = null;
+        switch (value){
+            case "Animal" :
+                question =  animalQuestionList.getRandomQuestion();
+                break;
+            case "Bird" :
+                question =  birdQuestionList.getRandomQuestion();
+                break;
+        }
+        return  question;
+    }
+
     private void loadInitialQuiz(){
         try{
             Thread.sleep(2000);
         }catch (InterruptedException ie){
             ie.printStackTrace();
         }
-        question =  questionList.getRandomQuestion();
+        question =  getRandomQuestion();
         ImageView questionImg = findViewById(R.id.questionImg);
         questionImg.setImageResource(question.getImageId());
 

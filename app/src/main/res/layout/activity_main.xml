@@ -13,7 +13,7 @@
         android:layout_width="184dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:onClick="callAnimalAcitity"
+        android:onClick="callQuizAcitity"
         android:text="Animal"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,10 +25,21 @@
         android:layout_width="182dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:onClick="callBirdAcitity"
+        android:onClick="callQuizAcitity"
         android:text="Bird"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Indian Hero"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6" />
 </android.support.constraint.ConstraintLayout>

@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class QuestionList {
+public class AnimalQuestionList {
     List<Question> questionList = new ArrayList();
     Random r = new Random();
 
-
-    public QuestionList(){
+    public AnimalQuestionList(){
         questionList.add(new Question(R.drawable.lion,"Lion","Elephant","Tiger","Dog","Lion"));
         questionList.add(new Question(R.drawable.elephant,"Lion","Elephant","Tiger","Dog","Elephant"));
         questionList.add(new Question(R.drawable.dog,"Lion","Elephant","Tiger","Dog","Dog"));
