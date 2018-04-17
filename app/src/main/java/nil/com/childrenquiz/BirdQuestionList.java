@@ -21,8 +21,7 @@ public class BirdQuestionList {
 
         questionList.add(new Question(R.drawable.sparrow,"Sparrow","Ostrich","Crow","Vulture","Sparrow"));
         questionList.add(new Question(R.drawable.swan,"Parrot","Swan","Owl","Eagle","Swan"));
-        questionList.add(new Question(R.drawable.vulture,"Cock","Eagle","Vulture","Crow","Vulture"));
-    }
+        questionList.add(new Question(R.drawable.vulture,"Cock","Eagle","Vulture","Crow","Vulture"));    }
 
     public Question getRandomQuestion(){
         int index = r.nextInt(questionList.size());

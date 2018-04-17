@@ -13,6 +13,7 @@ import java.util.Locale;
 public class QuizActivity extends AppCompatActivity {
     private AnimalQuestionList animalQuestionList = new AnimalQuestionList();
     private BirdQuestionList birdQuestionList = new BirdQuestionList();
+    private FruitQuestionList fruitQuestionList = new FruitQuestionList();
     private Question question;
     private TextToSpeech textToSpeech;
     private static final String CORRECT_ANSWER = "Answer is correct";
@@ -44,6 +45,10 @@ public class QuizActivity extends AppCompatActivity {
             case "Bird" :
                 question =  birdQuestionList.getRandomQuestion();
                 break;
+            case "Fruit" :
+                question =  fruitQuestionList.getRandomQuestion();
+                break;
+
         }
         return  question;
     }
